@@ -5,3 +5,7 @@
 .switchers {
     max-height: 32px;
 }
+
+.dropdown-menu {
+    width: 50px !important;
+}

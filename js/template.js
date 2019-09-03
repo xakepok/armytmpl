@@ -1,3 +1,5 @@
 $(document).ready(function () {
-    $('select').selectpicker();
+    $('select').selectpicker({
+        width: '70px',
+    });
 });
