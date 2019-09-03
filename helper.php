@@ -25,6 +25,13 @@ use Joomla\CMS\Uri\Uri;
  */
 class TplArmytmplHelper
 {
+
+    public static function getUserName()
+    {
+        $user = JFactory::getUser();
+        return (!$user->guest) ? $user->name : 'Guest';
+    }
+
 	/**
 	 * Method to get Template
 	 *

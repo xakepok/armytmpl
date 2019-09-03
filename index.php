@@ -13,17 +13,19 @@ defined('_JEXEC') or die;
 
 require_once JPATH_THEMES . '/' . $this->template . '/helper.php';
 
-tplArmytmplHelper::loadJs();
-tplArmytmplHelper::setMetadata();
+TplArmytmplHelper::loadJs();
+TplArmytmplHelper::setMetadata();
 
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <link rel="stylesheet" href="/templates/<?php echo $this->template;?>/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/templates/<?php echo $this->template;?>/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="/templates/<?php echo $this->template;?>/css/template.css" />
+    <title><?php echo $this->title;?></title>
 </head>
-<body class="<?php echo tplArmytmplHelper::setBodySuffix(); ?>">
+<body class="<?php echo TplArmytmplHelper::setBodySuffix(); ?>">
 <div class="container-fluid">
     <div class="container-fluid py-3 h-25">
         <header>
@@ -33,11 +35,14 @@ tplArmytmplHelper::setMetadata();
                 </div>
                 <div class="col-md-10 text-right gray py-3">
                     <div class="row">
-                        <div class="col-11 text-right">
+                        <div class="col-9 text-right">
+                            <jdoc:include type="modules" name="contract" style="none" />
+                        </div>
+                        <div class="col-2 text-right">
                             <figure class="figure">
                                 <img src="/templates/<?php echo $this->template;?>/images/user.png" alt="User" class="switchers" />
                                 <figcaption class="figure-caption text-right">
-                                    <?php echo JFactory::getUser()->name;?>
+                                    <?php echo TplArmytmplHelper::getUserName();?>
                                 </figcaption>
                             </figure>
                         </div>
@@ -81,4 +86,7 @@ tplArmytmplHelper::setMetadata();
 <script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/jquery-3.4.1.slim.min.js"></script>
 <script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/popper.min.js"></script>
 <script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/i18n/defaults-ru_RU.min.js"></script>
+<script type="text/javascript" src="/templates/<?php echo $this->template;?>/js/template.js"></script>
 </html>
